@@ -12,6 +12,7 @@
     * [Message filtering](#message-filtering)
     * [Database backends](#database-backends)
     * [Gmail](#gmail)
+    * [Adblocking](#adblock)
 * [Miscelaneous](#misc)
     * [Cleaning database](#cleaning-database)
     * [Portable user data](#portable-user-data)
@@ -62,7 +63,7 @@ RSS Guard is distributed in two variants:
 
 ### Standard package with WebEngine-based bundled message viewer
 
-This variant displays messages with their full formatting and layout in embedded Chromium-based web viewer. This variant of RSS Guard should be nice for everyone who doesn't care about memory consumption. Also, installation packages are relatively big.
+This variant displays messages with their full formatting and layout in embedded Chromium-based web viewer. This variant of RSS Guard should be nice for everyone who doesn't care about memory consumption (RAM usage under Windows 10 rarely exceeds 100 MB however). Also, installation packages are relatively big.
 
 <img src="images/webengine-view.png" width="80%">
 
@@ -201,7 +202,10 @@ RSS Guard includes Gmail plugin, which allows users to receive and send (!!!) e-
 * You can also reply to existing messages.
 * Plugin is able to suggest recipient's e-mail.
 
-# Misc
+## Adblocking
+Support for filtering rules based on [Adblock Plus](https://adblockplus.org/) is supported! Find more information in [adblocking](adblock.md).
+
+# Miscelaneous
 Here you can find some useful insights into RSS Guard's modus operandi.
 
 ## Cleaning database
@@ -234,15 +238,15 @@ If you run into problems with RSS Guard and you need your problems fixed, you sh
 To redirect debug output of RSS Guard to log file, do this:
 
 * Windows
-  1. You need to open command line, run `CTRL + R` and write `cmd`.
-  2. Navigate to your RSS Guard installation folder, `cd C:\Programs\rssguard\`. This is the folder which contains `rssguard.exe`.
+  1. Open a command prompt by pressing <key>Win</key> + <key>R</key>, then typing `cmd`.
+  2. Navigate to your RSS Guard installation folder. If RSS Guard was installed the default path is `C:\Programs\rssguard\`. This is the folder which contains `rssguard.exe`.
   3. Enter `.\rssguard.exe --log '.\log.txt'`. RSS Guard will now start. You can of course specify arbitrary file where to store log and its location must be writable. The `--log` syntax is supported starting from RSS Guard 3.8.0. Older versions do not support capturing debug output.
   4. Now try to simulate your problem.
   5. Attach generated `log.txt` file to your bug report.
 
 * Linux
   1. You need to open command line, run terminal emulator.
-  2. Navigate to your RSS Guard installation folder, `cd /my/root/rssguard'. This step is not usually needed.
+  2. Navigate to your RSS Guard installation folder, `cd /my/root/rssguard`. This step is not usually needed.
   3. Enter `rssguard > /home/<user>/log.txt 2>&1`. RSS Guard will now start.
   4. Now try to simulate your problem.
   5. Attach generated `log.txt` file to your bug report.
